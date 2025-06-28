@@ -1,0 +1,49 @@
+    body {
+        font-family: 'Century Schoolbook', serif;
+        margin: 3;
+        padding: 20px;
+        background-color: #E3EBF9;
+    }
+    h1{
+        display: inline;
+        color: #333;
+        margin: 0, 0, 0, 0;
+        font-size: 40px;
+    }
+    h2{
+        color: #555;
+        font-size: 29px;
+        margin-bottom: 5px;
+    }
+    h3{
+        color: #333;
+        margin-top: 5px;
+        font-size: 24px;
+        margin-bottom: -6px;
+    }
+    a {
+        color: #007bff;
+        text-decoration: none;
+    } 
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    .text-align-right {
+        text-align: right;
+    }
+    .extra-padding-left-small {
+        padding-left: 10px;
+    }
+    .text_link {
+            color: #007bff;
+        }
+
+    .text_link span:hover{
+            text-decoration: underline;
+        }
