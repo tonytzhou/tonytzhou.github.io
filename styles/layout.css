@@ -1,14 +1,13 @@
     body {
         font-family: 'Century Schoolbook', serif;
-        margin: 3;
+        margin: 3px;
         padding: 20px;
         background-color: #E3EBF9;
     }
     h1{
         display: inline;
         color: #333;
-        margin: 0, 0, 0, 0;
-        font-size: 40px;
+        font-size: 40px;    
     }
     h2{
         color: #555;
