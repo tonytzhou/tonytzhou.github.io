@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html prefix="og: https://ogp.me/ns#">
+  <head>
+    <title>Tony's Portfolio Gallery</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="type" content="website" />
+    <meta name="title" content="Tony Zhou Portfolio Gallery"/>
+    <meta name="image" content="https://tonytzhou.github.io/images/IMG_2410.jpg"/>
+    <meta name="description" content="Portfolio gallery of Tony Zhou's projects, graphics, and visual work."/>
+    <meta name="author" content="Tony Zhou" />
+    <meta name="keywords" content="Tony Zhou, Portfolio, Gallery, Projects, UCR, Computer Science" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tony Zhou Portfolio Gallery"/>
+    <meta property="og:image" content="https://tonytzhou.github.io/images/IMG_2410.jpg"/>
+    <meta property="og:description" content="Portfolio gallery of Tony Zhou's projects, graphics, and visual work."/>
+    <meta property="og:url" content="https://tonytzhou.github.io/portfolio.html" />
+    <link rel="stylesheet" href="styles/layout.css">
+
+    <style>
+      /* Centered Header Section */
+      .portfolio-header {
+        text-align: center;
+        margin: 30px 0 30px 0;
+      }
+
+      .portfolio-header h1 {
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+      }
+
+      .portfolio-header p {
+        color: gray;
+        font-size: 15px;
+      }
+
+      .portfolio-header nav {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+
+      /* Section Styling */
+      .gallery-section {
+        margin-top: 35px;
+        margin-bottom: 25px;
+      }
+
+      .gallery-section h2 {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+      }
+
+      /* Gallery Grid & Card Styling */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-card {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 12px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .gallery-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 2px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+
+      .gallery-card img:hover {
+        opacity: 0.9;
+      }
+
+      .gallery-card h4 {
+        margin: 5px 0;
+      }
+
+      .gallery-card p {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #444;
+        flex-grow: 1;
+      }
+
+      /* Lightbox Modal Overlay */
+      .lightbox-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        backdrop-filter: blur(4px);
+      }
+
+      .lightbox-modal.active {
+        display: flex;
+      }
+
+      .lightbox-content {
+        max-width: 90vw;
+        max-height: 85vh;
+        border-radius: 6px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        object-fit: contain;
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .lightbox-caption {
+        position: absolute;
+        bottom: 25px;
+        color: #ddd;
+        font-size: 15px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 6px 16px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Centered Top Header -->
+    <header class="portfolio-header">
+      <h1>Portfolio Gallery</h1>
+      <p>Visual projects, 2D/3D assets, and work showcase</p>
+      <nav>
+        <a href="index.html">← Back to Home</a>
+      </nav>
+    </header>
+
+    <!-- Section 1: 3D Models -->
+    <section class="gallery-section">
+      <h2>3D Models</h2>
+      <div class="gallery-grid">
+
+        <!-- 3D Model Item Template -->
+        <div class="gallery-card">
+          <img src="images/zanka staff.png" alt="Zanka Staff" class="zoomable">
+          <h4>Zanka's Staff from Gachiakuta</h4>
+          <p>Low-poly high-detailed staff modeled in Blender converted turned into a wearable back accessory in Roblox</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Artworks -->
+    <section class="gallery-section">
+      <h2>Artworks</h2>
+      <div class="gallery-grid">
+
+        <!-- Artwork Item Template -->
+        <div class="gallery-card">
+          <img src="images/house_map.png" alt="House map" class="zoomable">
+          <h4>"House Across the Bridge"</h4>
+          <p>Map created through online painting software for a prototype fighting game.</p>
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/moon_map.png" alt="Moon map" class="zoomable">
+          <h4>"Stage on the Moon"</h4>
+          <p>Map created through online painting software for a prototype fighting game.</p>
+        </div>
+
+          <div class="gallery-card">
+          <img src="images/flowers_painting.jpg" alt="Flowers Painting" class="zoomable">
+          <h4>Scenery Painting</h4>
+          <p>Gouchae painting of a violet scenery I saw.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <img class="lightbox-content" id="lightboxImg" alt="Enlarged view">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script>
+      const lightboxModal = document.getElementById('lightboxModal');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+      const lightboxClose = document.getElementById('lightboxClose');
+
+      // Attach click handlers to all images with class "zoomable"
+      document.querySelectorAll('.gallery-card img').forEach(img => {
+        img.classList.add('zoomable');
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.src;
+          lightboxCaption.textContent = img.alt || '';
+          lightboxModal.classList.add('active');
+        });
+      });
+
+      // Close modal on click (background, close button, or image)
+      lightboxModal.addEventListener('click', () => {
+        lightboxModal.classList.remove('active');
+      });
+
+      // Close modal when pressing Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          lightboxModal.classList.remove('active');
+        }
+      });
+    </script>
+
+  </body>
+</html>
